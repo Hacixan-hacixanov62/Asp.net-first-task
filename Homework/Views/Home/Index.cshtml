@@ -1,0 +1,66 @@
+﻿@using Homework.Models
+@using Homework.ViewModels
+
+
+@model HomeVM
+
+
+<h2>Students order by desc </h2>
+<table class="table" border="2"
+    >
+    <thead >
+        <tr style="background-color:Yellow" >
+            <th >Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Students)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+                <td>@user.Email</td>
+                <td>@user.Age</td>
+                <td>@user.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+<h2>Products</h2>
+
+<table class="table"border="2">
+<thead>
+    <tr style="background-color:green" >
+        <th>Name</th>
+        <th>Color</th>
+        <th>Price</th>
+        
+    </tr>
+</thead>
+<tbody>
+    @foreach (var product in Model.Products)
+    {
+        <tr>
+           
+            <td>@product.Name</td>
+            <td>@product.Color</td>
+            <td>@product.Price</td>
+                
+           
+        </tr>
+    }
+</tbody>
+</table>
+
+
+
+<h2>Products Count</h2>
+ <h1>@Model.Products.Count</h1>
